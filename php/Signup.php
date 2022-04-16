@@ -7,12 +7,13 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="../css/style.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
 
     <title>Signup</title>
+    
   </head>
   <body>
      <!-- Start navbar -->
@@ -28,7 +29,7 @@
                 <a class="nav-link active" aria-current="page" href="../php/Home.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../php/login.php">Log in</a>
+                <a class="nav-link active" aria-current="page" href="../php/index.php">Log in</a>
               </li>
 
 
@@ -53,27 +54,27 @@
                     class="img-fluid" alt="Phone image">
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                    <h1>Welcome</h1>
+                    <h1 >Welcome</h1>
                   <form>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                    <label class="form-label" for="form1Example13">UserName</label>
-                      <input type="text" id="form1Example13" class="form-control form-control-lg" />
+                    <label class="form-label" for="form1Example14">UserName</label>
+                      <input type="text" id="UserNameS" class="form-control form-control-lg" />
                     </div>
           
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                    <label class="form-label" for="form1Example23">Password</label>
-                      <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                    <label class="form-label" for="form1Example24">Password</label>
+                      <input type="password" id="PasswordS" class="form-control form-control-lg" />
                     </div>
                     
                     <div class="form-outline mb-4">
-                    <label class="form-label" for="form1Example23">ConfermPassword</label>
-                        <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                    <label class="form-label" for="form1Example24">ConfermPassword</label>
+                        <input type="password" id="ConfermPassword" class="form-control form-control-lg" />
                       </div>
                    
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block container-fluid">Signup</button>
+                    <button type="submit" id="Signup" class="btn btn-primary btn-lg btn-block container-fluid" disabled>Signup</button>
           
                     <div class="d-flex justify-content-center mt-3">
                         <p class="text-secondary">if you have acount?<span> <a href="">login</a> </span> </p>
@@ -97,5 +98,6 @@
 
       </main>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+      <script src="../js/Signup.js"></script>
+    </body>
 </html>
