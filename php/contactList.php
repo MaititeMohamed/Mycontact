@@ -7,8 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
 
@@ -18,7 +18,7 @@
   </head>
   <body>
     <!-- Start navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">e
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Mycontact</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,30 +71,29 @@
                    <form action="">
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Avatar</label>
-                      <input type="file" name="Avatar" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="file" name="Avatar" id="AvatarA" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Name</label>
-                      <input type="text" name="Name" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="Name" id="NameA" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">PhoneNumber</label>
-                      <input type="text" name="PhoneNumber" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="PhoneNumber" id="PhoneNumberA" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">email</label>
-                      <input type="text" name="email" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="email" id="emailA" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Addres</label>
-                      <input type="text" name="Addres" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="Addres" id="AddresA" class="form-control form-control-lg" />
                     </div>
                     </form>
       
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-primary " id="Add" disabled>Add</button>
       </div>
     </div>
   </div>
@@ -144,30 +143,29 @@
                    <form action="">
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Avatar</label>
-                      <input type="file" name="Avatar" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="file" name="Avatar" id="Avatar" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Name</label>
-                      <input type="text" name="Name" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="Name" id="Name" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">PhoneNumber</label>
-                      <input type="text" name="PhoneNumber" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="PhoneNumber" id="PhoneNumber" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">email</label>
-                      <input type="text" name="email" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="email" id="email" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Addres</label>
-                      <input type="text" name="Addres" id="form1Example13" class="form-control form-control-lg" />
+                      <input type="text" name="Addres" id="Addres" class="form-control form-control-lg" />
                     </div>
                     </form>
       
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Edit</button>
+                        <button type="submit" id="Edit"  class="btn btn-primary" disabled>Edit</button>
                       </div>
                     </div>
                   </div>
@@ -188,5 +186,6 @@
 
     </div> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <script src="../js/contactList.js"></script>
 </body>
 </html>
