@@ -1,3 +1,6 @@
+<?php session_start();
+  
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,12 +58,15 @@
     <div class="container  mt-4 h-100">
   
     <!-- start modal -->
+
+    <div class="container  mt-4 h-100">
+  
+    <!-- Modal -->
  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Add New
 </button>
 
-<!-- Modal -->
-<form action="">
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -69,58 +75,73 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                  
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">Avatar</label>
-                      <input type="file" name="Avatar" id="AvatarA" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">Name</label>
-                      <input type="text" name="Name" id="NameA" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">PhoneNumber</label>
-                      <input type="text" name="PhoneNumber" id="PhoneNumberA" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">email</label>
-                      <input type="text" name="email" id="emailA" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">Addres</label>
-                      <input type="text" name="Addres" id="AddresA" class="form-control form-control-lg" />
-                    </div>
-                    <div class="modal-footer">
-                      <input type="submit" class="btn btn-primary " id="Add" disabled value="Add">
-                    </div>
-                     
-      
+      <form method="post" action="./process/Proces.php" >
+
+              <div class="form-outline mb-2">
+              <label class="form-label"  for="form1Example13">Avatar</label>
+                <input type="file" name="Avatar" id="AvatarA" class="form-control form-control-lg" />
+              </div>
+              <div class="form-outline mb-2">
+              <label class="form-label"  for="form1Example13">Name</label>
+                <input type="text" name="Name" id="NameA" class="form-control form-control-lg" />
+              </div>
+              <div class="form-outline mb-2">
+              <label class="form-label"  for="form1Example13">PhoneNumber</label>
+                <input type="text" name="PhoneNumber" id="PhoneNumberA" class="form-control form-control-lg" />
+              </div>
+              <div class="form-outline mb-2">
+              <label class="form-label"  for="form1Example13">email</label>
+                <input type="text" name="email" id="emailA" class="form-control form-control-lg" />
+              </div>
+              <div class="form-outline mb-2">
+              <label class="form-label"  for="form1Example13">Addres</label>
+                <input type="text" name="Address" id="AddresA" class="form-control form-control-lg" />
+              </div>
+              <div class="modal-footer">
+                <input type="submit" name="add" class="btn btn-primary " id="Add"  value="Add">
+              </div>
+              </form>
       </div>
      
     </div>
   </div>
 </div>
-</form>
+
  <!-- end  modal -->
 
-      <div class="row ">
+ <!-- end  modal -->
+ <div class="row ">
+ <?php 
+ include "./process/Contact.php";
+echo $_SESSION['Userid'];
+    $data=new Contact();
+   $contactlist=$data->ShowData();
+
+  //echo '<pre>'; 
+  //var_dump($contactlist);
+  //echo '</pre>';
+  
+  foreach($contactlist as $contact):
+
+ ?>
+     
         <div class="mt-4 col-md-12 col-xl-4">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body ">
                 <div class="text-center">
               <div class="mt-3 mb-4">
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                  src="../img/test.png"
                   class="rounded-circle img-fluid" style="width: 100px;"
                 />
               </div>
-              <h4 class="mb-2">Maitite Mohamed</h4>
-              <p class="text-muted mb-4 ">Programmer </p>
+              <h4 class="mb-2"><?php echo $contact['Name']; ?></h4>
+              <p class="text-muted mb-4 "> </p>
             </div>
               <div class="d-block justify-content-start">
-                <p>0615234567</p>
-                <p>MaititeMohamed@gmaile.com</p>
-                <p>Youssoufia</p>
+                <p><?php echo $contact['PhoneNumber']; ?></p>
+                <p><?php echo $contact['email']; ?></p>
+                <p><?php echo $contact['Address']; ?></p>
               </div>
               <div class="d-flex justify-content-between">
               <button type="button" class="btn btn-primary btn-rounded btn-lg">
@@ -179,15 +200,9 @@
             </div>
           </div>
         </div>
-         
-        
-          
-           
-         
-
-      </div>
-
-    </div> 
+     
+<?php endforeach; ?>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    <script src="../js/contactList.js"></script>
 </body>
