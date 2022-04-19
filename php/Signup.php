@@ -1,3 +1,7 @@
+<?php
+include "./process/Proces.php";
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,17 +59,17 @@
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h1 >Welcome</h1>
-                  <form>
+                  <form method="post" action="./process/Proces.php">
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example14">UserName</label>
-                      <input type="text" id="UserNameS" class="form-control form-control-lg" />
+                      <input type="text" id="UserNameS" name="UserName" class="form-control form-control-lg" />
                     </div>
           
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example24">Password</label>
-                      <input type="password" id="PasswordS" class="form-control form-control-lg" />
+                      <input type="password" id="PasswordS" name="Password" class="form-control form-control-lg" />
                     </div>
                     
                     <div class="form-outline mb-4">
@@ -74,7 +78,7 @@
                       </div>
                    
                     <!-- Submit button -->
-                    <button type="submit" id="Signup" class="btn btn-primary btn-lg btn-block container-fluid" disabled>Signup</button>
+                    <button type="submit" id="Signup" name="Signup" class="btn btn-primary btn-lg btn-block container-fluid" disabled>Signup</button>
           
                     <div class="d-flex justify-content-center mt-3">
                         <p class="text-secondary">if you have acount?<span> <a href="">login</a> </span> </p>
