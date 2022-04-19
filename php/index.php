@@ -1,3 +1,7 @@
+
+<?php
+include "./process/Proces.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -62,17 +66,17 @@
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h1>Welcome</h1>
-                  <form>
+                  <form method="post" action="./process/Proces.php">
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                     <label class="form-label" for="form1Example13">UserName</label>
-                      <input type="text" id="UserNamel" class="form-control form-control-lg UserNamel" />
+                      <input type="text" name="UserName" id="UserNamel" class="form-control form-control-lg UserNamel" />
                     </div>
           
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                    <label class="form-label" for="form1Example23">Password</label>
-                      <input type="password" id="Passwordl" class="form-control form-control-lg Passwordl" />
+                    <label class="form-label"  for="form1Example23">Password</label>
+                      <input type="password" id="Passwordl" name="Password" class="form-control form-control-lg Passwordl" />
                     </div>
           
                     <div class="d-flex justify-content-around align-items-center mb-4">
@@ -86,7 +90,7 @@
                     </div>
           
                     <!-- Submit button -->
-                    <button type="submit"  id="SignInbtn" class="btn btn-primary btn-lg btn-block container-fluid " disabled>Sign in</button>
+                    <button type="submit"  name="SignIn" id="SignInbtn" class="btn btn-primary btn-lg btn-block container-fluid " disabled>Sign in</button>
           
                     <div class="d-flex justify-content-center mt-3">
                         <p class="text-secondary">if you don't have acount?<span> <a href="">Create New</a> </span> </p>
