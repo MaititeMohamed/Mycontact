@@ -73,7 +73,7 @@
                 style="width: 80px;"
               />
               <h5>Mohamed</h5>
-              <p>full stack developper</p>
+              <p>full stack developper : <?php  session_start(); echo $_SESSION['UserName']; ?></p>
               <i class="far fa-edit mb-5"></i>
             </div>
             <div class="col-md-8">
