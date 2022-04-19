@@ -60,6 +60,7 @@
 </button>
 
 <!-- Modal -->
+<form action="">
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -68,7 +69,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                   <form action="">
+                  
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Avatar</label>
                       <input type="file" name="Avatar" id="AvatarA" class="form-control form-control-lg" />
@@ -89,15 +90,17 @@
                     <label class="form-label"  for="form1Example13">Addres</label>
                       <input type="text" name="Addres" id="AddresA" class="form-control form-control-lg" />
                     </div>
-                    </form>
+                    <div class="modal-footer">
+                      <input type="submit" class="btn btn-primary " id="Add" disabled value="Add">
+                    </div>
+                     
       
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary " id="Add" disabled>Add</button>
-      </div>
+     
     </div>
   </div>
 </div>
+</form>
  <!-- end  modal -->
 
       <div class="row ">
@@ -161,17 +164,17 @@
                     <label class="form-label"  for="form1Example13">Addres</label>
                       <input type="text" name="Addres" id="Addres" class="form-control form-control-lg" />
                     </div>
-                    </form>
-      
+                    
                       </div>
                       <div class="modal-footer">
-                        <button type="submit" id="Edit"  class="btn btn-primary" disabled>Edit</button>
+                        <input type="submit"   id="Edit"  class="btn btn-primary " disabled value="Edit">
                       </div>
                     </div>
                   </div>
                 </div>
- <!-- end  modal -->
-                          <!-- End modal --> 
+                </form>
+                 <!-- end  modal -->
+                  <!-- End modal --> 
                 </div>
             </div>
           </div>
