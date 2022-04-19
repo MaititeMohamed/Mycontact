@@ -19,6 +19,7 @@ CREATE TABLE `users` (
    PRIMARY KEY (Userid)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
 --
 -- Structure de la table `Contact`
 --
