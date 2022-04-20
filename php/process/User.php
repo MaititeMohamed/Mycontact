@@ -45,7 +45,7 @@ class User extends Dbconnect{
                         $date_and_time = $date.' '.$time;
                         $_SESSION['lasttime'] = $date_and_time;
                         session_write_close();
-                        header('location: ../index.php');
+                        header('location: ../login.php');
                         } catch(EXCEPTION $e){
                             echo "check of username or password : ". $e->getMessage();
                         }

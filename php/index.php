@@ -25,10 +25,10 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../php/Home.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="../php/index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../php/index.php">Log in</a>
+                <a class="nav-link active" aria-current="page" href="../php/login.php">Log in</a>
               </li>
 
 

@@ -40,7 +40,7 @@ $infocontact=$Cont->getcotactinfo($id);
     
                <div class="container mt-5">
                             
-                   <form action="">
+                   <form action="" method="post" >
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Avatar</label>
                       <input type="file" name="Avatar" id="Avatar" value="<?php echo $infocontact['Avatar'];?>" class="form-control form-control-lg" />
