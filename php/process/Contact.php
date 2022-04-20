@@ -1,6 +1,6 @@
 <?php
 include_once "ConnectDB.php";
-class Contact extends Dbconnect{
+  class Contact extends Dbconnect{
 
     public $id;
     public $Avatar;
@@ -46,8 +46,19 @@ class Contact extends Dbconnect{
             } catch(EXCEPTION $e){
                 echo "Error : ". $e->getMessage();
             }
- } 
+         } 
 
-
+          //dele contact
+           function DeleteContact($id){
+            $sql= $this->connect()->prepare("DELETE FROM `Contact` WHERE id = ? ");
+            $sql->bindParam(1,$id, PDO::PARAM_STR);
+                try {
+                $sql->execute();
+                header('location: ../contactList.php');
+                    }
+                    catch(EXCEPTION $e){
+                        echo "Error : ". $e->getMessage();
+                        }
+            }
 
 }
