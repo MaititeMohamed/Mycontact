@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
   
 ?>
 <!doctype html>
@@ -116,13 +117,13 @@
 echo $_SESSION['Userid'];
     $data=new Contact();
    $contactlist=$data->ShowData();
-
+   
   //echo '<pre>'; 
   //var_dump($contactlist);
   //echo '</pre>';
   
   foreach($contactlist as $contact):
-
+    $id=$contact['id'];
  ?>
      
         <div class="mt-4 col-md-12 col-xl-4">
@@ -138,64 +139,23 @@ echo $_SESSION['Userid'];
               <h4 class="mb-2"><?php echo $contact['Name']; ?></h4>
               <p class="text-muted mb-4 "> </p>
             </div>
+           
               <div class="d-block justify-content-start">
                 <p><?php echo $contact['PhoneNumber']; ?></p>
                 <p><?php echo $contact['email']; ?></p>
                 <p><?php echo $contact['Address']; ?></p>
+                <!--<p><?php echo $contact['id']; ?></p> -->
               </div>
               <div class="d-flex justify-content-between">
-              <button type="button" class="btn btn-primary btn-rounded btn-lg">
-                Delete
-              </button>
-                          <!-- End modal --> 
-                                                      
-                               
-                                    <!-- start modal -->
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                      Edit
-                      </button>
+              
+               
+             
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel2"> edit contact </h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                   <form action="">
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">Avatar</label>
-                      <input type="file" name="Avatar" id="Avatar" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">Name</label>
-                      <input type="text" name="Name" id="Name" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">PhoneNumber</label>
-                      <input type="text" name="PhoneNumber" id="PhoneNumber" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">email</label>
-                      <input type="text" name="email" id="email" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-2">
-                    <label class="form-label"  for="form1Example13">Addres</label>
-                      <input type="text" name="Addres" id="Addres" class="form-control form-control-lg" />
-                    </div>
-                    
-                      </div>
-                      <div class="modal-footer">
-                        <input type="submit"   id="Edit"  class="btn btn-primary " disabled value="Edit">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </form>
-                 <!-- end  modal -->
-                  <!-- End modal --> 
+      <a class="btn btn-primary btn-rounded btn-lg" href="./process/DeleteContact.php?Deleteid=<?php echo $id;?>"> Delete</a>
+      <a class="btn btn-primary btn-rounded btn-lg" href="./process/EditContact.php?Editid=<?php echo $id;?>"> Edit</a>
+             
+
+                 
                 </div>
             </div>
           </div>
