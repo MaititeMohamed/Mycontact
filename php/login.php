@@ -40,10 +40,6 @@ include "./process/Proces.php";
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="../php/Signup.php">Sing up</a>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../php/Profile.php">Profile</a>
-              </li>
               
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="../php/contactList.php">contactList</a>

@@ -1,3 +1,9 @@
+<?php 
+
+  //include "session.php";
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -53,7 +59,7 @@
                 <a class="nav-link active" aria-current="page" href="../php/contactList.php">contactList</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">logout</a>
+                <a class="nav-link active" aria-current="page" href="logout.php">logout</a>
               </li>
           </div>
         </div>
@@ -83,11 +89,13 @@
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
                     <h6>Email</h6>
-                    <p class="text-muted">info@example.com</p>
+                    <p class="text-muted"><?php echo $_SESSION['UserName']; ?>@gmail.com</p>
                   </div>
                   <div class="col-6 mb-3">
                     <h6>last login</h6>
-                    <p class="text-muted"> <?php  echo $_SESSION['lasttime']; ?></p>
+                    
+                   <p class="text-muted"> <?php if(isset($_SESSION['lasttime'])) { echo $_SESSION['lasttime'] ;} ?></p>
+                    <!-- <p class="text-muted"> <?php  echo $_SESSION['lasttime']; ?></p> -->
                   </div>
                 </div>
                 <h6>Projects</h6>

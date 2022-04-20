@@ -23,7 +23,10 @@ class User extends Dbconnect{
               $_SESSION['DateSignup'] = $row['DateSignup'];
               $_SESSION['Userid'] = $row['Userid'];
               
-              
+                        $date = date('Y-m-d');
+                        $time = date('h:i:sa');
+                        $date_and_time = $date.' '.$time;
+                        $_SESSION['lasttime'] = $date_and_time;
              
               header('location: ../Profile.php');//redairect to profile
           }
@@ -35,16 +38,7 @@ class User extends Dbconnect{
                     $sql->bindParam(1, $UserName, PDO::PARAM_STR);
                     $sql->bindParam(2, $Password, PDO::PARAM_STR);
                     try {
-                        $sql->execute();
-                        //setcookie('UserName', $UserName, time() + (3600 * 24), "/"); 
-                        //setcookie('Password', $Password, time() + (3600 * 24), "/"); 
-                        // session_start();
-                        
-                        $date = date('Y-m-d');
-                        $time = date('h:i:sa');
-                        $date_and_time = $date.' '.$time;
-                        $_SESSION['lasttime'] = $date_and_time;
-                        session_write_close();
+                        $sql->execute(); 
                         header('location: ../login.php');
                         } catch(EXCEPTION $e){
                             echo "check of username or password : ". $e->getMessage();

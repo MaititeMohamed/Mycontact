@@ -1,6 +1,6 @@
 <?php 
 session_start();
-  
+include "session.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,7 +49,7 @@ session_start();
                 <a class="nav-link active" aria-current="page" href="../php/contactList.php">contactList</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link active " aria-current="page" href="index.php">logout</a>
+                <a class="nav-link active " aria-current="page" href="logout.php">logout</a>
               </li>
 
           </div>
