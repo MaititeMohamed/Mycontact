@@ -1,15 +1,11 @@
 <?php
+
 //include_once "ConnectDB.php";
 class User extends Dbconnect{
     
 
   
-        function loginUser($UserName , $Password){
-          
-          // $date = date('Y-m-d');
-          // $time = date('h:i:sa');
-          // $date_and_time = $date.' '.$time;
-         
+        function loginUser($UserName , $Password){ 
          $sql = $this->connect()->prepare("SELECT * FROM `users` WHERE `UserName` = ? AND `Password` = ?");// 
          $sql->bindParam(1, $UserName, PDO::PARAM_STR);
          $sql->bindParam(2, $Password, PDO::PARAM_STR);
@@ -21,12 +17,12 @@ class User extends Dbconnect{
           $count = $sql->rowCount();
           if($count > 0){
               $row = $sql->fetch();
-              //setcookie('UserName', $row['UserName'], time() + (3600 * 24), "/"); 
-             // setcookie('Password', $row['Password'], time() + (3600 * 24), "/"); 
               session_start();
               $_SESSION['UserName'] = $row['UserName'];
               $_SESSION['Password'] = $row['Password'];
+              $_SESSION['DateSignup'] = $row['DateSignup'];
               $_SESSION['Userid'] = $row['Userid'];
+              
               
              
               header('location: ../Profile.php');//redairect to profile

@@ -1,17 +1,20 @@
 <?php
+$id=$_GET['updateid'];
 include_once('ConnectDB.php');
 include_once('Contact.php');
-//Delete Cotact
-$Cont=new Contact();
+//get info contact
 
-if(isset($_POST['Edit'])){
-     $Avatar = $_POST['Avatar'];
+$Cont=new Contact();
+$infocontact=$Cont->getcotactinfo($id);
+   if(isset($_POST['Edit'])){
+    $Avatar = $_POST['Avatar'];
     $Name = $_POST['Name']; 
     $PhoneNumber = $_POST['PhoneNumber'];
     $email = $_POST['email'];
     $Address = $_POST['Address'];
-   // $Cont->Update();
+   $Cont->UpdateCotact($Avatar,$Name,$PhoneNumber,$email,$Address,$id);
   }
+  
   
 
 ?>
@@ -35,33 +38,33 @@ if(isset($_POST['Edit'])){
   </head>
   <body>
     
-               <div class="container">
+               <div class="container mt-5">
                             
                    <form action="">
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Avatar</label>
-                      <input type="file" name="Avatar" id="Avatar" class="form-control form-control-lg" />
+                      <input type="file" name="Avatar" id="Avatar" value="<?php echo $infocontact['Avatar'];?>" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Name</label>
-                      <input type="text" name="Name" id="Name" class="form-control form-control-lg" />
+                      <input type="text" name="Name" id="Name" value="<?php echo $infocontact['Name'];?>" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">PhoneNumber</label>
-                      <input type="text" name="PhoneNumber" id="PhoneNumber" class="form-control form-control-lg" />
+                      <input type="text" name="PhoneNumber" id="PhoneNumber" value="<?php echo $infocontact['PhoneNumber'];?>"  class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">email</label>
-                      <input type="text" name="email" id="email" class="form-control form-control-lg" />
+                      <input type="text" name="email" id="email" value="<?php echo $infocontact['email'];?>" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-2">
                     <label class="form-label"  for="form1Example13">Addres</label>
-                      <input type="text" name="Addres" id="Addres" class="form-control form-control-lg" />
+                      <input type="text" name="Address" id="Addres" value="<?php echo $infocontact['Address'];?>" class="form-control form-control-lg" />
                     </div>
                     
                      
                       <div class="modal-footer">
-                        <input type="submit"   id="Edit" name="Edit" class="btn btn-primary " disabled value="Edit">
+                        <input type="submit"   id="Edit" name="Edit" class="btn btn-primary "  value="Edit">
                       </div>
                   
                 </form>

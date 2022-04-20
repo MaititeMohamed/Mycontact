@@ -72,8 +72,8 @@
                 class="img-fluid my-5"
                 style="width: 80px;"
               />
-              <h5>Mohamed</h5>
-              <p>full stack developper : <?php  session_start(); echo $_SESSION['UserName']; ?></p>
+              <h5>welcome</h5>
+              <p>Your Name is: <?php  session_start(); echo $_SESSION['UserName']; ?></p>
               <i class="far fa-edit mb-5"></i>
             </div>
             <div class="col-md-8">
@@ -86,20 +86,20 @@
                     <p class="text-muted">info@example.com</p>
                   </div>
                   <div class="col-6 mb-3">
-                    <h6>Phone</h6>
-                    <p class="text-muted">123 456 789</p>
+                    <h6>last login</h6>
+                    <p class="text-muted"> <?php  echo $_SESSION['lasttime']; ?></p>
                   </div>
                 </div>
                 <h6>Projects</h6>
                 <hr class="mt-0 mb-4">
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
-                    <h6>Recent</h6>
-                    <p class="text-muted">Lorem ipsum</p>
+                    <h6>Number of contact</h6>
+                    <p class="text-muted">10</p>
                   </div>
                   <div class="col-6 mb-3">
-                    <h6>Most Viewed</h6>
-                    <p class="text-muted">Dolor sit amet</p>
+                    <h6>date Sigup</h6>
+                    <p class="text-muted"><?php  echo $_SESSION['DateSignup']; ?></p>
                   </div>
                 </div>
                 <div class="d-flex justify-content-start">

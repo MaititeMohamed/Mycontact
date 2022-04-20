@@ -114,7 +114,7 @@ session_start();
  <div class="row ">
  <?php 
  include "./process/Contact.php";
-echo $_SESSION['Userid'];
+
     $data=new Contact();
    $contactlist=$data->ShowData();
    
@@ -152,7 +152,7 @@ echo $_SESSION['Userid'];
              
 
       <a class="btn btn-primary btn-rounded btn-lg" href="./process/DeleteContact.php?Deleteid=<?php echo $id;?>"> Delete</a>
-      <a class="btn btn-primary btn-rounded btn-lg" href="./process/EditContact.php?Editid=<?php echo $id;?>"> Edit</a>
+      <a class="btn btn-primary btn-rounded btn-lg" href="./process/EditContact.php?updateid=<?php echo $id;?>"> Edit</a>
              
 
                  
