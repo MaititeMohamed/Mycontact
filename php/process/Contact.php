@@ -48,7 +48,7 @@ class Contact extends Dbconnect
         }
     }
 
-    //dele contact
+    //delete contact
     function DeleteContact($id)
     {
         $sql = $this->connect()->prepare("DELETE FROM `Contact` WHERE id = ? ");

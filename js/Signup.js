@@ -12,7 +12,7 @@
  var inputValideNum=0;
 function validateUserNameS() {
 let usernames = UserNameS.value;
-if (usernames == "" || !usernames.match(/^[a-z]{5,}$/)) {
+if (usernames == "" || !usernames.match(/^[a-zA-Z]{5,}$/)) {
 UserNameS.classList.add("Danger");
 } 
 else {

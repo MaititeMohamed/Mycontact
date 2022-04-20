@@ -4,15 +4,17 @@
 class User extends Dbconnect{
     
 
-  
+      //logiUser
         function loginUser($UserName , $Password){ 
          $sql = $this->connect()->prepare("SELECT * FROM `users` WHERE `UserName` = ? AND `Password` = ?");// 
          $sql->bindParam(1, $UserName, PDO::PARAM_STR);
          $sql->bindParam(2, $Password, PDO::PARAM_STR);
           try {
           $sql->execute();
+          
           } catch(EXCEPTION $e){
               echo "Invalid username and Password : ". $e->getMessage();
+              
           }
           $count = $sql->rowCount();
           if($count > 0){
@@ -22,16 +24,15 @@ class User extends Dbconnect{
               $_SESSION['Password'] = $row['Password'];
               $_SESSION['DateSignup'] = $row['DateSignup'];
               $_SESSION['Userid'] = $row['Userid'];
-              
-                        $date = date('Y-m-d');
-                        $time = date('h:i:sa');
-                        $date_and_time = $date.' '.$time;
-                        $_SESSION['lasttime'] = $date_and_time;
+                         date_default_timezone_set("Africa/Casablanca");
+                         $date = date("l , d M  Y H:i:s A");
+                         $_SESSION['lastlogin'] = $date;
              
               header('location: ../Profile.php');//redairect to profile
-          }
-              }
+               }
 
+              }
+           //signupUser
             function signupUser($UserName,$Password){
           
                     $sql = $this->connect()->prepare("INSERT INTO `users`(`UserName`,`Password`) VALUES (?,?)");// 
@@ -42,9 +43,20 @@ class User extends Dbconnect{
                         header('location: ../login.php');
                         } catch(EXCEPTION $e){
                             echo "check of username or password : ". $e->getMessage();
+                 
                         }
              } 
-              
+              //delet user
+              public function DeleteUser($id){
+                $sql = $this->connect()->prepare("DELETE FROM `users` WHERE Userid = ? ");
+                $sql->bindParam(1, $id, PDO::PARAM_STR);
+                try {
+                    $sql->execute();
+                    header('location: ../index.php');
+                } catch (EXCEPTION $e) {
+                    echo "Error : " . $e->getMessage();
+                }
+              }
           }
       
   

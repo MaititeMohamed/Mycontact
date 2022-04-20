@@ -18,7 +18,7 @@ Passwordl.addEventListener("focusout", validatepass);
    var inputvalid=0;
   function validateUserName() {
     let username = UserNamel.value;
-    if (username == "" || !username.match(/^[a-z]{5,}$/)) {
+    if (username == "" || !username.match(/^[a-zA-Z]{5,}$/)) {
         UserNamel.classList.add("Danger");
     } 
     else {

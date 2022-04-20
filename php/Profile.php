@@ -1,6 +1,9 @@
+
 <?php 
 
   //include "session.php";
+  session_start();
+ $id=$_SESSION['Userid'];
 
 
 ?>
@@ -79,8 +82,10 @@
                 style="width: 80px;"
               />
               <h5>welcome</h5>
-              <p>Your Name is: <?php  session_start(); echo $_SESSION['UserName']; ?></p>
-              <i class="far fa-edit mb-5"></i>
+              <p>Your Name is: <?php  echo $_SESSION['UserName']; ?></p>
+              <a class="btn btn-danger btn-rounded mt-5" href="./process/Deleteuser.php?iduser=<?php echo $id;?>"> Delete Your Acount</a>
+
+              
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">
@@ -94,8 +99,8 @@
                   <div class="col-6 mb-3">
                     <h6>last login</h6>
                     
-                   <p class="text-muted"> <?php if(isset($_SESSION['lasttime'])) { echo $_SESSION['lasttime'] ;} ?></p>
-                    <!-- <p class="text-muted"> <?php  echo $_SESSION['lasttime']; ?></p> -->
+                   <p class="text-muted"> <?php if(isset($_SESSION['lastlogin'])) { echo $_SESSION['lastlogin'] ;} ?></p>
+                    <!-- <p class="text-muted"> <?php  echo $_SESSION['lastlogin']; ?></p> -->
                   </div>
                 </div>
                 <h6>Projects</h6>

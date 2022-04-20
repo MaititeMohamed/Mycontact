@@ -11,6 +11,7 @@ session_start();
         $user = new User();
         $user->loginUser($UserName,$Password);
         
+        
     }
     //signup
     if(isset($_POST['Signup'])){
