@@ -27,10 +27,7 @@ class User extends Dbconnect{
               $_SESSION['UserName'] = $row['UserName'];
               $_SESSION['Password'] = $row['Password'];
               $_SESSION['Userid'] = $row['Userid'];
-              // echo $row['Userid'];
-              //echo  'T'.$row['UserName'];
-              //echo $row['Password'];
-              //echo 'test';
+              
              
               header('location: ../Profile.php');//redairect to profile
           }
@@ -46,8 +43,7 @@ class User extends Dbconnect{
                         //setcookie('UserName', $UserName, time() + (3600 * 24), "/"); 
                         //setcookie('Password', $Password, time() + (3600 * 24), "/"); 
                         // session_start();
-                        //$_SESSION['UserName'] = $UserName;
-                        //$_SESSION['Password'] = $Password;
+                        
                         $date = date('Y-m-d');
                         $time = date('h:i:sa');
                         $date_and_time = $date.' '.$time;

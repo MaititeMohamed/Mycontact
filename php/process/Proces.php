@@ -29,10 +29,8 @@ session_start();
         $email = $_POST['email'];
         $Address = $_POST['Address'];
         $Contact->AddContact($Avatar,$Name,$PhoneNumber,$email,$Address,$FK_Userid);
-
-       
-    
-    }
+      }
+      
 
  
 ?>
