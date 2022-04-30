@@ -13,7 +13,7 @@ class User extends Dbconnect{
           $sql->execute();
           
           } catch(EXCEPTION $e){
-              echo "Invalid username and Password : ". $e->getMessage();
+                 echo "Invalid username and Password : ". $e->getMessage();
               
           }
           $count = $sql->rowCount();
@@ -28,14 +28,22 @@ class User extends Dbconnect{
                          $date = date("l , d M  Y H:i:s A");
                          $_SESSION['lastlogin'] = $date;
              
-              header('location: ../Profile.php');//redairect to profile
+               header('location: ../Profile.php');//redairect to profile
+               }else
+               {
+                header('location: ../login.php');//redairect to profile
+
                }
 
               }
            //signupUser
             function signupUser($UserName,$Password){
           
-                    $sql = $this->connect()->prepare("INSERT INTO `users`(`UserName`,`Password`) VALUES (?,?)");// 
+                    $sql = $this->connect()->prepare("INSERT INTO `users`(`UserName`,`Password`) VALUES (?,?)");//
+                    if(empty($UserName) || empty($Password)   ){
+                        echo "<script>alert('fill all input')</script>";
+                        header('location: ../Signup.php');
+                    }else{ 
                     $sql->bindParam(1, $UserName, PDO::PARAM_STR);
                     $sql->bindParam(2, $Password, PDO::PARAM_STR);
                     try {
@@ -45,6 +53,7 @@ class User extends Dbconnect{
                             echo "check of username or password : ". $e->getMessage();
                  
                         }
+                    }
              } 
               //delet user
               public function DeleteUser($id){

@@ -18,6 +18,7 @@
      <!-- Start navbar -->
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
+
           <a class="navbar-brand" href="#">Mycontact</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,6 +36,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="../php/Signup.php">Sing up</a>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="../php/contactList.php">contactList</a>
               </li>
@@ -56,6 +58,7 @@
               </div>
 
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
                     <h1>Mycontact</h1>
                     <p>bureautique informatique, sans que son contenu n'en soit modifié.
                         Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset

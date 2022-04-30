@@ -33,18 +33,23 @@ class Contact extends Dbconnect
         $id = $FK_Userid;
         $sql = $this->connect()->prepare("INSERT INTO `Contact`( `Avatar`, `Name`, PhoneNumber, `email`, 
         `Address`, FK_Userid) VALUES (?,?,?,?,?,?)"); // 
+        if(empty($Avatar) || empty($Name) || empty($PhoneNumber ) || empty($email )  || empty($Address  ) || empty($FK_Userid )   ){
+            echo "<script>alert('fill all input')</script>";
+            header('location: ../contactList.php');
+        }else{
         $sql->bindParam(1, $Avatar, PDO::PARAM_STR);
         $sql->bindParam(2, $Name, PDO::PARAM_STR);
         $sql->bindParam(3, $PhoneNumber, PDO::PARAM_STR);
         $sql->bindParam(4, $email, PDO::PARAM_STR);
         $sql->bindParam(5, $Address, PDO::PARAM_STR);
-        $sql->bindParam(6, $id, PDO::PARAM_STR);
+        $sql->bindParam(6, $id, PDO::PARAM_INT);
 
         try {
             $sql->execute();
             header('location: ../contactList.php');
         } catch (EXCEPTION $e) {
             echo "Error : " . $e->getMessage();
+        }
         }
     }
 
@@ -75,24 +80,29 @@ class Contact extends Dbconnect
         return $datacontact;
     }
 
-    //add new contact
+    //update  contact
     function UpdateCotact($Avatar, $Name, $PhoneNumber, $email, $Address, $id)
     {
-
+       
         $sql = $this->connect()->prepare("UPDATE `Contact` SET `Avatar`=?,`Name`=?,`PhoneNumber`=?,`email`=?,`Address`=? where id = ?"); // 
-        $sql->bindParam(1, $Avatar, PDO::PARAM_STR);
-        $sql->bindParam(2, $Name, PDO::PARAM_STR);
-        $sql->bindParam(3, $PhoneNumber, PDO::PARAM_STR);
-        $sql->bindParam(4, $email, PDO::PARAM_STR);
-        $sql->bindParam(5, $Address, PDO::PARAM_STR);
-        $sql->bindParam(6, $id, PDO::PARAM_STR);
-
-
-        try {
-            $sql->execute();
-            header('location: ../contactList.php');
-        } catch (EXCEPTION $e) {
-            echo "Error : " . $e->getMessage();
+        if(empty($Avatar) || empty($Name) || empty($PhoneNumber ) || empty($email )  || empty($Address  ) || empty($id )   ){
+            echo "<script>alert('fill all input')</script>";
+        }else{
+            $sql->bindParam(1, $Avatar, PDO::PARAM_STR);
+            $sql->bindParam(2, $Name, PDO::PARAM_STR);
+            $sql->bindParam(3, $PhoneNumber, PDO::PARAM_STR);
+            $sql->bindParam(4, $email, PDO::PARAM_STR);
+            $sql->bindParam(5, $Address, PDO::PARAM_STR);
+            $sql->bindParam(6, $id, PDO::PARAM_INT);
+    
+    
+            try {
+                $sql->execute();
+                header('location: ../contactList.php');
+            } catch (EXCEPTION $e) {
+                echo "Error : " . $e->getMessage();
+            }
         }
+        
     }
 }

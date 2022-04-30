@@ -17,8 +17,6 @@ include "session.php";
      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
 
     <title>ContactList</title>
-
-
   </head>
   <body>
     <!-- Start navbar -->
@@ -120,7 +118,7 @@ include "session.php";
    
   //echo '<pre>'; 
   //var_dump($contactlist);
-  //echo '</pre>';
+  //echo '</pre>';Fixing all kinds of tire issues using on-site and off- site solutions
   
   foreach($contactlist as $contact):
     $id=$contact['id'];
@@ -132,7 +130,7 @@ include "session.php";
                 <div class="text-center">
               <div class="mt-3 mb-4">
                 <img
-                  src="../img/test.png"
+                  src="../img/Home.svg"
                   class="rounded-circle img-fluid" style="width: 100px;"
                 />
               </div>

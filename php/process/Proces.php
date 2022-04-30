@@ -9,7 +9,10 @@ session_start();
         $UserName = $_POST['UserName'];
         $Password = $_POST['Password'];
         $user = new User();
-        $user->loginUser($UserName,$Password);
+        
+            $user->loginUser($UserName,$Password);
+
+        
         
         
     }
@@ -18,18 +21,22 @@ session_start();
         $UserName = $_POST['UserName'];
         $Password = $_POST['Password'];
        
+            $user->signupUser($UserName,$Password);
+
         
-        $user->signupUser($UserName,$Password);
+        
     }
     //Add contact
      $Contact=new Contact();
     if(isset($_POST['add'])){
-         $Avatar = $_POST['Avatar'];
+        $Avatar = $_POST['Avatar'];
         $Name = $_POST['Name']; 
         $PhoneNumber = $_POST['PhoneNumber'];
         $email = $_POST['email'];
         $Address = $_POST['Address'];
+       
         $Contact->AddContact($Avatar,$Name,$PhoneNumber,$email,$Address,$FK_Userid);
+        
       }
       
 
