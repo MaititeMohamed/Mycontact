@@ -56,6 +56,12 @@ include "./process/Proces.php";
                     class="img-fluid" alt="Phone image">
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                   <!-- error acount exist  -->
+                  <?php
+                  echo $_SESSION['error'];
+                    $_SESSION['error']='';
+                    echo $_SESSION['error'];
+                  ?>
                     <h1 >Welcome</h1>
                   <form method="post" action="./process/Proces.php">
                     <!-- Email input -->
