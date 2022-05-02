@@ -20,9 +20,32 @@ session_start();
     if(isset($_POST['Signup'])){
         $UserName = $_POST['UserName'];
         $Password = $_POST['Password'];
-       
-            $user->signupUser($UserName,$Password);
+            $chekuser= $user->checkIfUserExist($UserName ,$Password);
+           if($chekuser){
 
+           $error= '
+           <div class="modal" tabindex="-1">
+         <div class="modal-dialog">
+        <div class="modal-content">
+         <div class="modal-header">
+        <h5 class="modal-title">worning</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <p>this acount already exist</p>
+       </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       </div>
+       </div>
+       </div>
+       </div>
+           ';
+           header("location: ../Signup.php");
+
+           }else{
+            $user->signupUser($UserName,$Password);
+        }
         
         
     }
@@ -38,7 +61,3 @@ session_start();
         $Contact->AddContact($Avatar,$Name,$PhoneNumber,$email,$Address,$FK_Userid);
         
       }
-      
-
- 
-?>

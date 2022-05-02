@@ -93,7 +93,6 @@ class User extends Dbconnect
         $sql = $this->connect()->prepare("INSERT INTO `users`(`UserName`,`Password`) VALUES (?,?)"); //
         if (empty($UserName) || empty($Password)) {
             echo "<script>alert('fill all input')</script>";
-            header('location: ../Signup.php');
         } else {
             $sql->bindParam(1, $UserName, PDO::PARAM_STR);
             $sql->bindParam(2, $Password, PDO::PARAM_STR);
