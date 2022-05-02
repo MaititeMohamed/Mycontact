@@ -63,7 +63,11 @@ include "session.php";
     <!-- Modal -->
  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Add New
-</button>
+</button> 
+<?php
+  echo @$_SESSION['cerror'];
+  $_SESSION['cerror']='';
+?>
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

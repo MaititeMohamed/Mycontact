@@ -30,6 +30,48 @@ class Contact extends Dbconnect
         }
         return $datacontact;
     }
+
+
+       
+    /**
+     * check if contact  exists :
+     * the's methode take   the parameters from form and use it for check if user  
+     * already exists in the database
+      * @param string $Avatar
+     * @param string $Name
+     * @param string $PhoneNumber
+     * @param string $email
+     * @param string $Address
+     * @param string $FK_Userid
+     * @return 
+     */
+    function  checkIfContactExists($Name, $PhoneNumber, $email)
+    {
+        $sql = $this->connect()->prepare("SELECT *  FROM Contact ");
+        try {
+            $sql->execute();
+            
+        } catch (EXCEPTION $e) {
+            echo "faild sql  : " . $e->getMessage();
+        }
+
+            foreach ($sql as $data){
+             $cName = $data['Name'];
+             $cPhoneNumber= $data['PhoneNumber'];
+             $cemail = $data['email'];
+            
+            if($cName==$Name && $cemail==$email && $cPhoneNumber==$PhoneNumber  ){
+                return true; // acount exist
+                break;
+               }else{
+                   return false ;//new acount 
+                   break;
+               }
+            }
+            
+            
+        
+    }
     //add new contact
     /**
      *the's methode acount information from form and use this infomation 
