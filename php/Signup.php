@@ -58,7 +58,7 @@ include "./process/Proces.php";
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                    <!-- error acount exist  -->
                   <?php
-                  echo $_SESSION['error'];
+                  echo @$_SESSION['error'];
                     $_SESSION['error']='';
                     echo $_SESSION['error'];
                   ?>
